@@ -1,4 +1,4 @@
--- Запрос по заданию №2 в конце документа
+﻿-- Запрос по заданию №2 в конце документа
 
 DROP TABLE IF EXISTS [Product];
 DROP TABLE IF EXISTS [Category];
