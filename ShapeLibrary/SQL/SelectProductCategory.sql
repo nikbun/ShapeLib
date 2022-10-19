@@ -1,9 +1,9 @@
--- Запрос по заданию №2 в конце документа
+-- Р—Р°РїСЂРѕСЃ РїРѕ Р·Р°РґР°РЅРёСЋ в„–2 РІ РєРѕРЅС†Рµ РґРѕРєСѓРјРµРЅС‚Р°
 
 DROP TABLE IF EXISTS [Product];
 DROP TABLE IF EXISTS [Category];
 
--- Создаем таблицы
+-- РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†С‹
 
 CREATE TABLE [Category]
 (
@@ -21,22 +21,22 @@ CREATE TABLE [Product]
 	ON UPDATE CASCADE
 );
 
--- Заполняем данными
+-- Р—Р°РїРѕР»РЅСЏРµРј РґР°РЅРЅС‹РјРё
 
-INSERT INTO [Category] ([Name]) VALUES ('Овощи');
-INSERT INTO [Category] ([Name]) VALUES ('Фрукты');
-INSERT INTO [Category] ([Name]) VALUES ('Сладости');
+INSERT INTO [Category] ([Name]) VALUES ('РћРІРѕС‰Рё');
+INSERT INTO [Category] ([Name]) VALUES ('Р¤СЂСѓРєС‚С‹');
+INSERT INTO [Category] ([Name]) VALUES ('РЎР»Р°РґРѕСЃС‚Рё');
 
 
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Огурец', 1);
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Помидор', 1);
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Яблоко', 2);
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Груша', 2);
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Шоколад', 3);
-INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Конфеты', 3);
-INSERT INTO [Product] ([Name]) VALUES ('Кирпич');
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('РћРіСѓСЂРµС†', 1);
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('РџРѕРјРёРґРѕСЂ', 1);
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('РЇР±Р»РѕРєРѕ', 2);
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('Р“СЂСѓС€Р°', 2);
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('РЁРѕРєРѕР»Р°Рґ', 3);
+INSERT INTO [Product] ([Name], [CategoryId]) VALUES ('РљРѕРЅС„РµС‚С‹', 3);
+INSERT INTO [Product] ([Name]) VALUES ('РљРёСЂРїРёС‡');
 
--- Собственно, выводим сам запрос
+-- РЎРѕР±СЃС‚РІРµРЅРЅРѕ, РІС‹РІРѕРґРёРј СЃР°Рј Р·Р°РїСЂРѕСЃ
 
-SELECT [Product].[Name] AS 'Имя продукта', [Category].[Name] AS 'Имя категории' 
+SELECT [Product].[Name] AS 'РРјСЏ РїСЂРѕРґСѓРєС‚Р°', [Category].[Name] AS 'РРјСЏ РєР°С‚РµРіРѕСЂРёРё' 
 	FROM [Product] LEFT JOIN [Category] ON [Product].[CategoryId] = [Category].[Id]
